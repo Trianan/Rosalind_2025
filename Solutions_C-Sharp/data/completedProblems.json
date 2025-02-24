@@ -1,0 +1,10 @@
+{
+  "userName": "TestName",
+  "completedProblemsCount": 1,
+  "completedProblems": [
+    {
+      "name": "ExampleSolution",
+      "completionDate": "not_set"
+    }
+  ]
+}
