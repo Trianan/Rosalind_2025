@@ -2,14 +2,21 @@
     FILE:          DNA.cs
     PROJECT:       Rosalind_2025/Solutions_C-Sharp
     CREATION DATE: February 23, 2025
-    LAST MODIFIED: February 23, 2025
+    LAST MODIFIED: February 24, 2025
     AUTHOR:        Tristin A. Manson (TriaNaN)
     DESCRIPTION:
         Solution for 'DNA' problem on Rosalind platform.
+        Verified correct answer (Feb 24/2025): 222 220 193 219
 ==============================================================================*/
 namespace Solutions_C_Sharp.solutions;
 
 public class DNA : Solution {
+    /*
+        METHOD: Run
+        DESCRIPTION:
+            Executes the primary logic for the solution and outputs the
+            final answer.
+    */
     public override void Run() {
         string? strandData = FileReader.GetData(GetType().Name);
         if (strandData == null) {
@@ -22,7 +29,15 @@ public class DNA : Solution {
             $">>>{nbCounts['A']} {nbCounts['C']} {nbCounts['G']} {nbCounts['T']}<<<"
         );
     }
-
+    
+    /*
+        METHOD: GetNucleobaseCount
+        DESCRIPTION:
+            Counts the number of occurrences of A, C, G, and T nucleobases
+            within a string representing a DNA strand; returns a dictionary
+            with keys corresponding to each nucleobase, and values representing
+            the count of each within the strand.
+    */
     private Dictionary<char, int> GetNucleobaseCount(string strand) {
         Dictionary<char, int> nucleobaseCounts = new() {
             ['A'] = 0,

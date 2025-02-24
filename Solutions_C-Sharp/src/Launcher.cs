@@ -2,7 +2,7 @@
     FILE:          Launcher.cs
     PROJECT:       Rosalind_2025/Solutions_C-Sharp
     CREATION DATE: February 21, 2025
-    LAST MODIFIED: February 23, 2025
+    LAST MODIFIED: February 24, 2025
     AUTHOR:        Tristin A. Manson (TriaNaN)
     DESCRIPTION:
         Launcher for all my solutions for problems hosted on the
@@ -28,7 +28,7 @@ static class Launcher {
     */
     public static void Main(string[] args) {
         
-        Console.WriteLine("ROSALIND_2025: C# Solutions\nShowing all solutions:");
+        Console.WriteLine("ROSALIND_2025: C# Solutions\n*Showing all solutions*");
         
         // Show all Solution child classes:
         var existingSolutions = Assembly.GetExecutingAssembly()
@@ -38,7 +38,7 @@ static class Launcher {
                        !t.IsAbstract // Don't show abstract classes.
                        );
         foreach (Type existingSolution in existingSolutions) {
-            Console.WriteLine(existingSolution.Name);
+            Console.WriteLine($"> {existingSolution.Name}");
         }
         
         while (true) {
@@ -56,18 +56,18 @@ static class Launcher {
                 Solution? solution = CreateSolutionByName(solutionInput);
                 if (solution != null) {
                     // Run specified solution:
-                    Console.WriteLine($"Executing {solution.GetType().Name}.Run() . . .");
+                    Console.WriteLine($"*Executing {solution.GetType().Name}.Run()*");
                     solution.Run();
-                    Console.WriteLine("Finished");
+                    Console.WriteLine("*Finished*");
                 }
                 else {
                     // No class defined that corresponds to provided solution name:
-                    Console.WriteLine($"No solution found for '{solutionInput}'.");
+                    Console.WriteLine($"*No solution found for '{solutionInput}'*");
                 }
             }
             else {
                 // ReadLine failed to get user input.
-                Console.WriteLine("No input obtained from console.");
+                Console.WriteLine("*No input obtained from console*");
                 break;
             }
         }

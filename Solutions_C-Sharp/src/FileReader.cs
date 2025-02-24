@@ -10,7 +10,6 @@
 namespace Solutions_C_Sharp;
 
 public static class FileReader {
-    
     // Contains path to input data folder:
     private static readonly string DataDir = Path.Combine(
         AppDomain.CurrentDomain.BaseDirectory,
