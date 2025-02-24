@@ -20,7 +20,7 @@ public class RNA : Solution {
     */
     private readonly string _dnaBaseSet = "ACGT";
     public override void Run() {
-        string? dnaStrand = FileReader.GetData(GetType().Name);
+        string? dnaStrand = FileReader.GetDataBlob(GetType().Name);
         if (dnaStrand == null) {
             Console.WriteLine("No DNA-strand data found. Terminating solution...");
             return;

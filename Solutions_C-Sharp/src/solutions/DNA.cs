@@ -18,7 +18,7 @@ public class DNA : Solution {
             final answer.
     */
     public override void Run() {
-        string? strandData = FileReader.GetData(GetType().Name);
+        string? strandData = FileReader.GetDataBlob(GetType().Name);
         if (strandData == null) {
             Console.WriteLine("No DNA-strand data found. Terminating solution...");
             return;

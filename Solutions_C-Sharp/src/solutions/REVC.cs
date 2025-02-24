@@ -19,7 +19,7 @@ public class REVC : Solution {
             final answer.
     */
     public override void Run() {
-        string? dnaStrand = FileReader.GetData(GetType().Name);
+        string? dnaStrand = FileReader.GetDataBlob(GetType().Name);
         if (dnaStrand == null) {
             Console.WriteLine("No DNA-strand data found. Terminating solution...");
             return;

@@ -18,14 +18,26 @@ public static class FileReader {
         );
     
     /*
-        METHOD: GetData
+        METHOD: GetDataBlob
         DESCRIPTION:
             Reads the input file corresponding to the solution
-            that uses it and returns it as a string for further
+            that uses it and returns it as a single string for further
             processing.
     */
-    public static string? GetData(string solutionName) {
+    public static string? GetDataBlob(string solutionName) {
         string dataFilePath = Path.Combine(DataDir, solutionName + ".txt");
         return File.Exists(dataFilePath) ? File.ReadAllText(dataFilePath) : null;
+    }
+    
+    /*
+        METHOD: GetDataLines
+        DESCRIPTION:
+            Reads the input file corresponding to the solution
+            that uses it and returns it as an array of strings for
+            further processing.
+    */
+    public static string[]? GetDataLines(string solutionName) {
+        string dataFilePath = Path.Combine(DataDir, solutionName + ".txt");
+        return File.Exists(dataFilePath) ? File.ReadAllLines(dataFilePath) : null;
     }
 }
